@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/static/main.css" th:href="@{/static/main.css}"/>
+</head>
+<body>
+<div th:substituteby="index::logout">
+</div>
+<h1>被保护的界面</h1>
+<p><a th:href="@{/index}" href="/index">返回首页</a></p>
+</body>
+</html>

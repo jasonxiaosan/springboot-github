@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: uaa-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-cloud-auth?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 9000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
+encrypt:
+  key-store:
+    alias: jason-jwt
+    password: jason123
+    secret: jason123

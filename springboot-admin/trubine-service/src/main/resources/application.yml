@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: service-turbine
+server:
+  port: 8769
+turbine:
+  app-config: eureka-client-one,eureka-client-two
+  cluster-name-expression: new String("default")
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
+management:
+  security:
+    enabled: false

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<link rel="stylesheet" href="/static/main.css" th:href="@{/static/main.css}"/>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<h1>Index</h1>
+<p>这个页面没有保护</p>
+<div th:fragment="logout" sec:authorize="isAuthenticated()">
+    用户登录:<span sec:authentication="name"></span>|
+    用户角色:<span sec:authentication="principal.authorities"></span>
+    <div>
+  <form action="#" th:action="@{/logout}" method="post">
+      <input type="submit" value="登出"/>
+  </form>
+    </div>
+</div>
+<ul>
+    <li>点击<a href="/user/index" th:href="@{/user/index}">去/user/index被保护的界面</a></li>
+</ul>
+</body>
+</html>

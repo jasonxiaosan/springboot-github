@@ -1,0 +1,30 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
+  instance:
+    metadata-map:
+      uesr.name: admin
+      user.password: 123456
+management:
+  security:
+    enabled: false
+server:
+  port: 5000
+logging:
+  file: "logs/boot-admin-sample.log"
+spring:
+  application:
+    name: service-admin
+  boot:
+    admin:
+     routes:
+       endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+     turbine:
+       clusters: default
+       location: service-turbine
+       enabled: true
+security:
+  user:
+    password: 123456
+    name: admin

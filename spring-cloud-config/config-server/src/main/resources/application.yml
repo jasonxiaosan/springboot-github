@@ -1,0 +1,34 @@
+---
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+  profiles:
+    active: native
+  application:
+    name: config-server
+server:
+  port: 8600
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
+---
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+  profiles:
+    active: native
+  application:
+    name: config-server
+server:
+  port: 8700
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/
